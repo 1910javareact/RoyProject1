@@ -1,15 +1,15 @@
 version: 0.2
-
+​
 phases:
-  install:
-    runtime-versions:
-      nodejs: 12
-    commands:
-      - npm install
-  build:
-    commands:
-      - npm run build
+    install:
+        runtime-versions:
+            nodejs: 8
+        commands: 
+            - npm install
+    build:
+        commands:
+            - npm run build
 artifacts:
-  files:
-    - '**/*'
-  base-directory: 'build'
+    files:
+        - '**/*'
+    base-directory: '/build'
