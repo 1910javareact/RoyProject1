@@ -1,30 +1,32 @@
-import { userLogin } from "../remote/user-clients/user"
+import { ersLogin } from "../remote/user-clients/user"
 
-export const LoginTypes = {
-    INVALID_CREDENTIALS: 'USER_LOGIN_INVALID_CREDENTIALS',
-    SUCCESSFUL_LOGIN: 'USER_LOGIN_SUCCESSFUL_LOGIN',
-    UNSUCCESSFUL_LOGIN: 'USER_LOGIN_FAILED_LOGIN'
+export const ersLoginTypes = {
+    INVALID_CREDENTIALS: 'ERS_LOGIN_INVALID_CREDENTIALS',
+    SUCCESSFUL_LOGIN: 'ERS_LOGIN_SUCCESSFUL_LOGIN',
+    UNSUCCESSFUL_LOGIN: 'ERS_LOGIN_FAILED_LOGIN'
 }
 
-export const Login = (username:string, password:string) => async (dispatch:any) => {
+export const userLogin = (username:string, password:string) => async (dispatch:any) => {
 
     try{
-        let res = await userLogin(username, password)
+        let res = await ersLogin(username, password)
+        //a successful login
         if(res.status === 200){
+            //this is how do it when we have async operations
             dispatch({
-                type:LoginTypes.SUCCESSFUL_LOGIN,
+                type:ersLoginTypes.SUCCESSFUL_LOGIN,
                 payload:{
                     user:res.body
                 }
             })
         }else{
             dispatch({
-                type:LoginTypes.INVALID_CREDENTIALS
+                type:ersLoginTypes.INVALID_CREDENTIALS
             })
         }
     }catch(e){
         dispatch({
-            type:LoginTypes.UNSUCCESSFUL_LOGIN
+            type:ersLoginTypes.UNSUCCESSFUL_LOGIN
         })
     }
     

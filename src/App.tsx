@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import './App.css'
+import React from 'react';
+import './App.css';
 import { Provider } from 'react-redux';
-import { Router, Switch, Route } from 'react-router';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import  LoginComponent  from './components/login-component/LoginContainer';
 import { store } from './store';
 
 const App: React.FC = () => {
@@ -10,11 +11,8 @@ const App: React.FC = () => {
       <Provider store={store}>
         <Router>
           <Switch>
-            <Route path='/login' component={LoginComponent} />
-            {/* <Route path='/reimbursement' component={ReimbursementComponent} /> */}
-            {/* <Route path='/user' component={UserComponent} /> */}
-            <Route path='/'>
-            </Route>
+            <Route path='/login' component={LoginComponent}></Route>
+            <Route path='/' component={LoginComponent}></Route>
           </Switch>
         </Router>
       </Provider>

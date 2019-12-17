@@ -1,6 +1,6 @@
 import { UserClient } from "./user-client";
 
-export async function userLogin(username:string, password:string){
+export async function ersLogin(username:string, password:string){
     const credentials = {
         username,
         password
