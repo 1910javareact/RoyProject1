@@ -1,6 +1,7 @@
 import React, { SyntheticEvent } from 'react'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import { User } from '../../models/user'
+import Example from '../navbar/navbar'
 
 interface ILoginComponentProps{
     user:User
@@ -36,14 +37,17 @@ export class LoginComponent extends React.Component<ILoginComponentProps, any>{
     render() {
         return (
             <div>
-                <Form onSubmit={this.submitLogin}>
+                  <nav>
+              <Example />
+            </nav>
+                <Form onSubmit={this.submitLogin} style={{width: '50%', margin:'auto'}}>
                     <FormGroup>
                         <Label for="exampleUsername">Username</Label>
-                        <Input value={this.state.username} onChange={this.updateUsername} type="text" name="username" id="exampleUsername" placeholder="with a placeholder" />
+                        <Input value={this.state.username} onChange={this.updateUsername} type="text" name="username" id="exampleUsername" placeholder="username" />
                     </FormGroup>
                     <FormGroup>
                         <Label for="examplePassword">Password</Label>
-                        <Input value={this.state.password} onChange={this.updatePassword} type="password" name="password" id="examplePassword" placeholder="password placeholder" />
+                        <Input value={this.state.password} onChange={this.updatePassword} type="password" name="password" id="examplePassword" placeholder="password" />
                     </FormGroup>
                     <Button color='danger'>Submit</Button>
                 </Form>
