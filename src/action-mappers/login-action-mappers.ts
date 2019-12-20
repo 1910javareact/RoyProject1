@@ -10,9 +10,7 @@ export const userLogin = (username:string, password:string) => async (dispatch:a
 
     try{
         let res = await ersLogin(username, password)
-        //a successful login
-        if(res.status === 200){
-            //this is how do it when we have async operations
+            if(res.status === 200){
             dispatch({
                 type:ersLoginTypes.SUCCESSFUL_LOGIN,
                 payload:{

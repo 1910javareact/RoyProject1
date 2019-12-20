@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import  LoginComponent  from './components/login-component/LoginContainer';
 import { store } from './store';
 import UsersDisplayComponent from './components/users-display/UsersDisplayContainer';
+import ReimbursementsDisplayComponent from './components/reimbursements-display/ReimbursementsDisplayContainer';
 
 const App: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const App: React.FC = () => {
         <Router>
           <Switch>
             <Route path='/users' component={UsersDisplayComponent}></Route>
+            <Route path='/reimbursements' component={ReimbursementsDisplayComponent}></Route>
             <Route path='/login' component={LoginComponent}></Route>
             <Route path='/' component={LoginComponent}></Route>
           </Switch>

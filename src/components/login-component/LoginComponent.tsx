@@ -1,35 +1,35 @@
 import React, { SyntheticEvent } from 'react'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import { User } from '../../models/user'
-import Example from '../navbar/navbar'
+import NavBar from '../navbar/navbar'
 
-interface ILoginComponentProps{
-    user:User
-    userLogin:(u:string,p:string)=>void
+interface ILoginComponentProps {
+    user: User
+    userLogin: (u: string, p: string) => void
 }
 
 export class LoginComponent extends React.Component<ILoginComponentProps, any>{
     constructor(props: any) {
         super(props)
         this.state = {
-            username:'',
-            password:''
+            username: '',
+            password: ''
         }
     }
-    updateUsername = (e:any)=>{
+    updateUsername = (e: any) => {
         this.setState({
             ...this.state,
             username: e.target.value
         })
     }
-    updatePassword = (e:any)=>{
+    updatePassword = (e: any) => {
         this.setState({
             ...this.state,
             password: e.target.value
         })
     }
 
-    submitLogin = async (e:SyntheticEvent) => {
+    submitLogin = async (e: SyntheticEvent) => {
         e.preventDefault()
         this.props.userLogin(this.state.username, this.state.password)
     }
@@ -37,10 +37,10 @@ export class LoginComponent extends React.Component<ILoginComponentProps, any>{
     render() {
         return (
             <div>
-                  <nav>
-              <Example />
-            </nav>
-                <Form onSubmit={this.submitLogin} style={{width: '50%', margin:'auto'}}>
+                <nav>
+                    <NavBar />
+                </nav>
+                <Form onSubmit={this.submitLogin} style={{ width: '50%', margin: 'auto' }}>
                     <FormGroup>
                         <Label for="exampleUsername">Username</Label>
                         <Input value={this.state.username} onChange={this.updateUsername} type="text" name="username" id="exampleUsername" placeholder="username" />

@@ -4,12 +4,13 @@ import { RouteComponentProps } from 'react-router'
 import { User } from '../../models/user'
 import { getAllUsers } from '../../remote/user-clients/user'
 import { UsersDisplayRowComponent } from './users-display-row/UsersDisplayRowComponent'
+import NavBar from '../navbar/navbar'
 
-interface IUsersDisplayProps extends RouteComponentProps{
-    user:User
+interface IUsersDisplayProps extends RouteComponentProps {
+    user: User
 }
 
-interface IUsersDisplayState{
+interface IUsersDisplayState {
     allUsers: User[]
 }
 
@@ -41,22 +42,25 @@ export class UsersDisplayComponent extends React.Component<any, IUsersDisplaySta
             return <UsersDisplayRowComponent user={e} key={'user ' + e.userId} />
         })
         return (
-                <div>
-                    <Table bordered color='danger'>
-                        <thead>
-                            <tr>
-                                <td>Username</td>
-                                <td>Email</td>
-                                <td>First Name</td>
-                                <td>Last Name</td>
-                                <td>Role</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {rows}
-                        </tbody>
-                    </Table>
-                </div>
+            <div>
+                <nav>
+                    <NavBar />
+                </nav>
+                <Table bordered color='danger'>
+                    <thead>
+                        <tr>
+                            <td>Username</td>
+                            <td>Email</td>
+                            <td>First Name</td>
+                            <td>Last Name</td>
+                            <td>Role</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {rows}
+                    </tbody>
+                </Table>
+            </div>
         )
     }
 }

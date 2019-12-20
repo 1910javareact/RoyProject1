@@ -8,13 +8,19 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const Example = (props:any) => {
+const NavBar = (props:any) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
           <Nav className="mr-auto" navbar>
+          <NavItem>
+            <NavLink><Link to='/'>Home</Link></NavLink>
+            </NavItem>
             <NavItem>
             <NavLink><Link to='/users'>Users</Link></NavLink>
+            </NavItem>
+            <NavItem>
+            <NavLink><Link to='/reimbursements'>Reimbursements</Link></NavLink>
             </NavItem>
           </Nav>
           <NavbarText>Expense Reimbursement System</NavbarText>
@@ -23,4 +29,4 @@ const Example = (props:any) => {
   );
 }
 
-export default Example;
+export default NavBar;
