@@ -3,7 +3,7 @@ import { Container, Card, TextField, Button } from '@material-ui/core'
 import { updateUser } from '../../remote/user-clients/user'
 import NavBar from '../navbar/navbar'
 
-export class SubmitUserComponent extends React.Component<any, any> {
+export class UpdateUserComponent extends React.Component<any, any> {
     constructor(props: any) {
         super(props)
         this.state = {
