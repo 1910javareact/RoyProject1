@@ -8,6 +8,7 @@ import UsersDisplayComponent from './components/users-display/UsersDisplayContai
 import ReimbursementsDisplayComponent from './components/reimbursements-display/ReimbursementsDisplayContainer';
 import UserByIdDisplayComponent from './components/users-display/UserByIdDisplayContainer';
 import { UpdateUserComponent } from './components/update-user-component/UpdateUserComponent';
+import { PostReimbursementComponent } from './components/post-reimbursement-component/PostReimbursementComponent';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
             <Route path='/userid/:id' component={UserByIdDisplayComponent}/>
             <Route path='/users' component={UsersDisplayComponent}></Route>
             <Route path='/update-user' component={UpdateUserComponent}></Route>
+            <Route path='/post-reimbursement' component={PostReimbursementComponent}></Route>
             <Route path='/' component={LoginComponent}></Route>
           </Switch>
         </Router>

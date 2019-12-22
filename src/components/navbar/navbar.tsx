@@ -3,32 +3,32 @@ import {
   Navbar,
   Nav,
   NavItem,
-  NavLink,
   NavbarText
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 const NavBar = (props:any) => {
   return (
-    <div>
       <Navbar color="light" light expand="md">
           <Nav className="mr-auto" navbar>
           <NavItem>
-            <NavLink><Link to='/'>Home</Link></NavLink>
+            <Link to='/'>Home|</Link>
             </NavItem>
             <NavItem>
-            <NavLink><Link to='/users'>Users</Link></NavLink>
+            <Link to='/users'>Users| </Link>
             </NavItem>
             <NavItem>
-            <NavLink><Link to='/update-user'>Update User</Link></NavLink>
+            <Link to='/update-user'>Update User| </Link>
             </NavItem>
             <NavItem>
-            <NavLink><Link to='/reimbursements'>Reimbursements</Link></NavLink>
+            <Link to='/reimbursements'>Reimbursements| </Link>
+            </NavItem>
+            <NavItem>
+            <Link to='/post-reimbursement'>New Reimbursement</Link>
             </NavItem>
           </Nav>
           <NavbarText>Expense Reimbursement System</NavbarText>
       </Navbar>
-    </div>
   );
 }
 

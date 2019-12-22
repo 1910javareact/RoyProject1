@@ -109,10 +109,10 @@ export class UpdateUserComponent extends React.Component<any, any> {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            color="primary"
+                            color="inherit"
                             className='{classes.submit}'
                         >
-                            Update User INFO
+                            Update User
                         </Button>
                     </form>
                     {message()}
